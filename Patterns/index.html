@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Patterns</title>
+  </head>
+  <body>
+    <script>
+      //PATTERN 1
+
+      //   let n = +prompt("Enter a Number");
+      //   let hold = "";
+
+      //   for (let i = 1; i <= n; i++) {
+      //       for (let j = 1; j <= n - i + 1; j++) {
+      //           hold += "*"
+      //       }
+      //       hold += "\n"
+      //   }
+      //   console.log(hold);
+
+      /*-------------------------------------*/
+
+      //PATTERN 2
+
+      // let n = +prompt("Enter a Number");
+      // let hold = "";
+
+      // for (let i = 1; i <= n; i++) {
+      //     for (let j = 1; j <= i; j++) {
+      //         hold += "*"
+      //     }
+      //     hold += "\n"
+      // }
+      // console.log(hold);
+
+      //PATTERN 3
+
+      /*-------------------------------------*/
+
+      //   let n = +prompt("Enter a Number");
+      //   let hold1 = "";
+      //   let hold2 = "";
+      //   let hold3 = "";
+
+      //   for (let i = 1; i <= n; i++) {
+      //     //sidhi line
+      //     for (let j = 1; j < 2; j++) {
+      //       hold1 += "*";
+      //     }
+      //     // || with space
+
+      //     //First | part
+      //     for (let str_b4_space = 1; str_b4_space < 2; str_b4_space++) {
+      //       hold2 += "*";
+      //     }
+      //     //space
+      //     for (let space = 1; space <= n - 1; space++) {
+      //       hold2 += "-";
+      //     }
+      //     for (
+      //       let str_after_space = 1;
+      //       str_after_space > n - 1;
+      //       str_after_space++
+      //     ) {
+      //       hold2 += "*";
+      //     }
+      //     for (
+      //       let lst_line = 1;
+      //       lst_line > n - 1 && lst_line <= n + 1;
+      //       lst_line++
+      //     ) {
+      //       hold3 += "*";
+      //     }
+      //     hold2 += "\n";
+      //   }
+
+      //   console.log(hold1 + hold2 + hold3);
+
+      /*-------------------------------------*/
+
+      //PATTERN 4
+
+      let n = +prompt("Enter a Number");
+      let i;
+      let holder = "";
+
+      for (i = 1; i <= n; i++) {
+        let j;
+        let spaces;
+
+        for (spaces = 1; spaces <= i - 1; spaces++) {
+          holder += " ";
+        }
+        let star;
+        for (star = 1; star <= n - i + 1; star++) {
+          holder += "*";
+        }
+        holder += "\n";
+      }
+      //   for (i = 1; i <= n; i++) {
+
+      //     holder += "\n";
+      //   }
+      console.log(holder);
+    </script>
+  </body>
+</html>
