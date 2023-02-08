@@ -14,14 +14,31 @@ let sum  = 0;
 // }
 // console.log("the sum is" + sum);
 
+/*-------------------------------------------------*/
+
+
 //By For loop
-for (let i = 1; i <= n; i++) {
+// for (let i = 1; i <= n; i++) {
     
+//     if (i%2!=0) {
+//                 console.log(i);
+//                 sum += i;
+//             }
+    
+// }
+
+// console.log("the sum is" + sum);
+
+/*-------------------------------------------------*/
+
+//do while loop
+let i = 1;
+do{
     if (i%2!=0) {
                 console.log(i);
                 sum += i;
             }
-    
 }
+while(++i<=n);
 
 console.log("the sum is" + sum);
