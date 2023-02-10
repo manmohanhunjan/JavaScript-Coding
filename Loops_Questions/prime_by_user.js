@@ -6,16 +6,16 @@ while (i<=n) {
     let j = 2;
     while (j<i) {
         if (i%j==0) {
-            console.log(i + "is Not a Prime");
+            // console.log(i + "is Not a Prime");
+            tracker += i
             break;
         } else{
 
-            console.log(i + "is a Prime");
-            tracker += i
+            // console.log(i + "is a Prime");
         }
         j++;
     }
-    if (tracker>0) {
+    if (tracker==0 && i!=0 && i!=1) {
         sum += i;
     }
     i++
