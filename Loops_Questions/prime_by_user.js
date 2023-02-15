@@ -1,17 +1,14 @@
 let i = +prompt("Enter the start");
 let n = +prompt("Enter a number");
 let sum = 0;
-while (i<=n) {
+while (i<n) {
     let tracker = 0;
     let j = 2;
     while (j<i) {
         if (i%j==0) {
             // console.log(i + "is Not a Prime");
-            tracker += i
+            tracker = 1;
             break;
-        } else{
-
-            // console.log(i + "is a Prime");
         }
         j++;
     }
