@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Array Operations</title>
+</head>
+<body>
+  <h1>Array Operations</h1>
+  <p>Enter a number:</p>
+  <input type="number" id="numInput">
+  <br>
+  <button onclick="pushNum()">Push</button>
+  <button onclick="popNum()">Pop</button>
+  <button onclick="shiftNum()">Shift</button>
+  <button onclick="unshiftNum()">Unshift</button>
+  <br>
+  <p>Array:</p>
+  <p id="arrayDisplay"></p>
+  
+  <script>
+    // Initialize an empty array
+    var myArray = [];
+    
+    // Get references to the input and display elements
+    var numInput = document.getElementById("numInput");
+    var arrayDisplay = document.getElementById("arrayDisplay");
+    
+    function pushNum() {
+      // Get the value of the input element
+      var num = numInput.value;
+      // Add the number to the end of the array
+      myArray.push(num);
+      // Update the display
+      updateDisplay();
+    }
+    
+    function popNum() {
+      // Remove the last element of the array
+      var lastIndex = myArray.length - 1;
+      var poppedElement = myArray[lastIndex];
+      myArray[lastIndex] = undefined;
+      // Update the display
+      updateDisplay();
+      // Return the popped element
+      return poppedElement;
+    }
+    
+    function shiftNum() {
+      // Remove the first element of the array
+      var shiftedElement = myArray[0];
+      for (var i = 0; i < myArray.length - 1; i++) {
+        myArray[i] = myArray[i + 1];
+      }
+      myArray[myArray.length - 1] = undefined;
+      // Update the display
+      updateDisplay();
+      // Return the shifted element
+      return shiftedElement;
+    }
+    
+    function unshiftNum() {
+      // Get the value of the input element
+      var num = numInput.value;
+      // Add the number to the beginning of the array
+      for (var i = myArray.length - 1; i >= 0; i--) {
+        myArray[i + 1] = myArray[i];
+      }
+      myArray[0] = num;
+      // Update the display
+      updateDisplay();
+    }
+    
+    function updateDisplay() {
+      // Build a string representation of the array
+      var arrayString = "[";
+      for (var i = 0; i < myArray.length; i++) {
+        arrayString += myArray[i];
+        if (i < myArray.length - 1) {
+          arrayString += ", ";
+        }
+      }
+      arrayString += "]";
+      // Update the display
+      arrayDisplay.textContent = arrayString;
+    }
+  </script>
+</body>
+</html>
