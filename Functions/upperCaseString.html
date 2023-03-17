@@ -1,23 +1,25 @@
+<!-- Write a function that takes an array of strings as an argument and returns a new
+array with all the strings in uppercase. -->
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-        let container = [];
-        function badaKarDo(...data) {
-            for (let i = 0; i < data.length; i++) {
-                container [i] = data[i].toUpperCase();
-                
-            }
-            return container;
+      let container = [];
+      function badaKarDo(...data) {
+        for (let i = 0; i < data.length; i++) {
+          container[i] = data[i].toUpperCase();
         }
-        badaKarDo('hey','yo','waddup')
-        console.log(container);
+        return container;
+      }
+      badaKarDo("hey", "yo", "waddup");
+      console.log(container);
     </script>
-</body>
+  </body>
 </html>

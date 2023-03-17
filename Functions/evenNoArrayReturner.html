@@ -1,5 +1,5 @@
 <!-- Write a function that takes an array of numbers as an argument and returns a new
-array with all the numbers doubled. -->
+array with only the even numbers. -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,13 +12,15 @@ array with all the numbers doubled. -->
   <body>
     <script>
       let container = [];
-      function paisaDouble(...data) {
+      function evenOnly(...data) {
         for (let i = 0; i < data.length; i++) {
-          container[i] = 2 * data[i];
+          if (data[i] % 2 == 0) {
+            container[container.length] = data[i];
+          }
         }
         return container;
       }
-      paisaDouble(1, 2, 3, 4, 5, 6);
+      evenOnly(1, 2, 3, 4, 5, 6);
       console.log(container);
     </script>
   </body>
