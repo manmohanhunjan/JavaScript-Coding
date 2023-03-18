@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do List</title>
+  </head>
+  <body>
+    <input type="text" name="" id="str" />
+    <button id="btn">click me!</button>
+    <ul></ul>
+
+    <script>
+      const data = document.querySelector("#str");
+      console.log(data.innerHTML);
+      const btn = document.querySelector("#btn");
+      btn.addEventListener("click", function () {
+        const li = document.createElement("li");
+        const ul = document.createElement("ul");
+        ul.appendChild(li);
+        li.textContent = data.value;
+        document.body.appendChild(ul);
+        data.value = "";
+        li.addEventListener('click', function () {
+            ul.removeChild(li);
+        })
+      });
+    //   li.addEventListener("click", function () {
+    //     ul.removeChild(li);
+    //   })
+    </script>
+  </body>
+</html>
