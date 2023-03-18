@@ -1,7 +1,3 @@
-<!-- Write a function that takes a number as an argument and returns a new function
-that takes another number as an argument and returns the product of the two
-numbers. -->
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,14 +8,14 @@ numbers. -->
   </head>
   <body>
     <script>
-      function noa(a) {
-        return function nob(b) {
-          return a * b;
+      function s1(a) {
+        return function s2(b) {
+          return a.concat(b);
         };
       }
-      let multi = noa(10);
+      let finalStr = s1('Hello');
 
-      console.log(multi(20));
+      console.log(finalStr('World'));
     </script>
   </body>
 </html>
