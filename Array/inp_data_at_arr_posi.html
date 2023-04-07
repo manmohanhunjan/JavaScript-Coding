@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Unshifter</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- <script src="script.js" defer></script> -->
+    <style>
+      body{
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+section {
+    text-align: center;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+div{
+    padding: 10px;
+}
+
+#container{
+    border: 2px solid black;
+}
+    </style>
+</head>
+<body>
+    <h1>Welcome to Array Placer</h1>
+        <fieldset>
+            <legend>Input in the Fields</legend>
+            <section>
+            <div><label for="">Enter Number of Data<input type="number" name="" id="data_no"></label></div>
+            <div><label for="">Enter Position of Data <input type="number" name="" id="data_posi"></label></div>
+            <br>
+            <hr>
+            <br>
+            <div><label for="">Data 1 <input type="number" name="" id="dta1"></label></div>
+            <div><label for="">Data 2 <input type="number" name="" id="dta2"></label></div>
+            <div><label for="">Data 3 <input type="number" name="" id="dta3"></label></div>
+            <div><label for="">Data 4 <input type="number" name="" id="dta4"></label></div>
+            <div><label for="">Data 5 <input type="number" name="" id="dta5"></label></div>
+            <div><label for="">Data 6 <input type="number" name="" id="dta6"></label></div>
+            <br>
+            <hr>
+            <br>
+            <button onclick="result()">result</button>
+        </section>
+        </fieldset>
+
+        <script>
+          let data_no; 
+let container = ["php", "java", "python", "c", "c++"];
+let posi;
+let dta1;
+let dta2;
+let dta3;
+let dta4;
+let dta5;
+let dta6;
+function result() {
+    data_no = +document.getElementById("data_no").value;
+    posi = +document.getElementById("data_posi").value;
+    dta1 = +document.getElementById("dta1").value;
+    dta2 = +document.getElementById("dta2").value;
+    dta3 = +document.getElementById("dta3").value;
+    dta4 = +document.getElementById("dta4").value;
+    dta5 = +document.getElementById("dta5").value;
+    dta6 = +document.getElementById("dta6").value;
+    // alert(data_no)
+    // let i = 0;
+    // while (i<data_no) {
+    //     container[i] = i;
+    //     i++;
+    //     return container;
+    // }
+    for(i = 0;i<data_no;i++){
+        container[i] = undefined;
+    }
+    console.log(container);
+}
+        </script>
+</body>
+</html>
