@@ -9,26 +9,28 @@
   <body>
     <input type="text" name="" id="str" />
     <button id="btn">click me!</button>
-    <!-- <ul></ul> -->
+    <ul id="list"></ul>
 
     <script>
       const data = document.querySelector("#str");
-      console.log(data.innerHTML);
       const btn = document.querySelector("#btn");
+      const list = document.querySelector("#list");
+      const items = [];
+
       btn.addEventListener("click", function () {
+        items.push(data.value);
         const li = document.createElement("li");
-        const ul = document.createElement("ul");
-        ul.appendChild(li);
         li.textContent = data.value;
-        document.body.appendChild(ul);
+        list.appendChild(li);
         data.value = "";
+
         li.addEventListener('click', function () {
-            ul.removeChild(li);
-        })
+            const index = items.indexOf(li.textContent);
+            items.splice(index, 1);
+            list.removeChild(li);
+        });
       });
-    //   li.addEventListener("click", function () {
-    //     ul.removeChild(li);
-    //   })
+  
     </script>
   </body>
 </html>
