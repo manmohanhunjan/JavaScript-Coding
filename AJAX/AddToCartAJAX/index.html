@@ -10,7 +10,7 @@
   <!-- Bootstrap CSS v5.2.1 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-
+    <script src="script.js" defer></script>
 </head>
 
 <body>
@@ -50,40 +50,33 @@
   </header>
   <main>
     <div class="container mt-3 ">
-        <div class="row d-flex">
-            <div class="col-4">
-                <button class="btn btn-primary" >
-                        Add To Cart <span class="badge bg-primary">12</span>
-                </button>
+        <!-- button in one col then a table beside it in another col -->
 
-            <div class="col-8">
-                <div class="table-responsive-md">
-                    <table class="table table-primary">
-                        <thead>
-                            <tr>
-                                <th scope="col">Column 1</th>
-                                <th scope="col">Column 2</th>
-                                <th scope="col">Column 3</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="">
-                                <td scope="row">R1C1</td>
-                                <td>R1C2</td>
-                                <td>R1C3</td>
-                            </tr>
-                            <tr class="">
-                                <td scope="row">Item</td>
-                                <td>Item</td>
-                                <td>Item</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                
+        <div class="row">
+            <div class="col-6">
+                <button class="btn btn-primary" id="btnAddToCart">Add to Cart</button>
             </div>
+            <div class="col-6">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Product Name</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                            <th>Subtotal</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody">
+                        <!-- <tr>
+                            <td>Product 1</td>
+                            <td>1</td>
+                            <td>100</td>
+                            <td>100</td>
+                        </tr> -->
+                    </tbody>
+                </table>
             </div>
-        </div>
+
     </div>
 
   </main>
