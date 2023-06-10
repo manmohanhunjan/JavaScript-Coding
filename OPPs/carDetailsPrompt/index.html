@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car details</title>
+</head>
+<body>
+    <button id="carDetailsPrompt">Search</button>
+
+    <script>
+        const btn = document.querySelector('#carDetailsPrompt');
+        const carDetails = [{
+            model: 'BMW',
+            year: 2021,
+            color: 'black'
+        },];
+        btn.addEventListener('click', ()=>{
+
+            //prompt
+            const carModel = prompt('Enter car model');
+            const carYear = prompt('Enter car year');
+            const carColor = prompt('Enter car color');
+            const newDetail = prompt('Enter new detail'); //new key
+            const newDetailValue = prompt('Enter new detail value'); //new value
+
+            //add new key-value pair to carDetails object
+            //i want the value of new detail to be the key of the object but that value is not coming insted it is coming as newDetail
+            //so i have to use square brackets
+            carDetails[newDetail] = newDetailValue;
+            carDetails.model = carModel;
+            carDetails.year = carYear;
+            carDetails.color = carColor;
+
+            console.log(carDetails);
+        })
+    </script>
+</body>
+</html>
