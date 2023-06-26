@@ -1,6 +1,3 @@
-//Consider using environment variables or server side storage to store sensitive data.
-//
-
 var xhr = new XMLHttpRequest();
 var url = 'https://apiv2.shiprocket.in/v1/external/auth/login';
 
@@ -9,7 +6,7 @@ xhr.setRequestHeader('Content-Type', 'application/json');
 
 xhr.onreadystatechange = function () {
   if (xhr.readyState === 4 && xhr.status === 200) {
-    var response = JSON.parse(xhr.responseText);  
+    var response = JSON.parse(xhr.responseText);
     var authToken = response.token;   
 
     

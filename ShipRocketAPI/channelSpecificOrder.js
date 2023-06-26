@@ -1,5 +1,21 @@
-// WARNING: For POST requests, body is set to null by browsers.
+/** POST
+* ! Create Channel Specific Order
+https://apiv2.shiprocket.in/v1/external/orders/create
+* ? This API can be used to create a custom order, 
+* ? the same as the Custom order API, except that you have to specify and select a custom channel to create the order.
 
+The order created will be added under the specified channel. All the other parameters are the same.
+
+Note:
+
+Channel_id field is required.
+Order_id cannot be the same as the already existing order id.
+Inventory Sync must be turned on to use this API. 
+This can be done under the 'Channels' portion on the left-hand panel of your Shiprocket account.
+Inventory details of your Shiprocket account can be accessed using the 'Get Inventory Details' API.; **/
+
+
+// WARNING: For POST requests, body is set to null by browsers.
 const submitBtn = document.querySelector('#submitBtn'); // Button to submit the form
 let count = 0;  // Counter for order_id
 // Event listener for submit button
@@ -163,7 +179,7 @@ submitBtn.addEventListener('click', (e) => {
     "order_id": count,
     "order_date": order_date,
     "pickup_location": pickup_location,
-    "channel_id": "",
+    "channel_id": 27022,
     "comment": comment,
     "billing_customer_name": billing_customer_name,
     "billing_last_name":  billing_last_name,
@@ -209,10 +225,10 @@ submitBtn.addEventListener('click', (e) => {
     "weight": 2.5
   });
   
-  var xhr = new XMLHttpRequest();  // Create a new request object to send to the server 
-  xhr.withCredentials = true;  // Credentials are cookies, authorization headers or TLS client certificates. 
+  var xhr = new XMLHttpRequest();  
+  xhr.withCredentials = true;   
   
-  xhr.addEventListener("readystatechange", function() { // EL for state change when readystate changes readystatechange fires
+  xhr.addEventListener("readystatechange", function() {
     if(this.readyState === 4) {
       if (this.status === 200) {
         console.log(this.responseText);
@@ -221,12 +237,12 @@ submitBtn.addEventListener('click', (e) => {
     }
   });
   
-  xhr.open("POST", "https://apiv2.shiprocket.in/v1/external/orders/create/adhoc"); // Open a new connection, using the POST request on the URL endpoint
-  xhr.setRequestHeader("Content-Type", "application/json"); // Set the value of an HTTP request header
+  xhr.open("POST", "https://apiv2.shiprocket.in/v1/external/orders/create"); 
+  xhr.setRequestHeader("Content-Type", "application/json"); 
   xhr.setRequestHeader("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjM2NjI1NDcsImlzcyI6Imh0dHBzOi8vYXBpdjIuc2hpcHJvY2tldC5pbi92MS9leHRlcm5hbC9hdXRoL2xvZ2luIiwiaWF0IjoxNjg2OTAwMDk1LCJleHAiOjE2ODc3NjQwOTUsIm5iZiI6MTY4NjkwMDA5NSwianRpIjoiUWY0NWN2SHRZTjdhR09odiJ9.Z2r4WIDrGJD3vJJsuUUYVUmadX9J8Drb9KbMMQpRbqU");  
-  // Set the value of an HTTP request header
+
   
-  xhr.send(data); // Send the request with the data
+  xhr.send(data);
 
   count++;
 
@@ -249,10 +265,8 @@ submitBtn.addEventListener('click', (e) => {
       }
     })
 
-    xhr.open("GET", "https://apiv2.shiprocket.in/v1/external/orders?order_id=362757350");
+    xhr.open("GET", "https://apiv2.shiprocket.in/v1/external/orders/");
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.setRequestHeader("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjM2NjI1NDcsImlzcyI6Imh0dHBzOi8vYXBpdjIuc2hpcHJvY2tldC5pbi92MS9leHRlcm5hbC9hdXRoL2xvZ2luIiwiaWF0IjoxNjg2OTAwMDk1LCJleHAiOjE2ODc3NjQwOTUsIm5iZiI6MTY4NjkwMDA5NSwianRpIjoiUWY0NWN2SHRZTjdhR09odiJ9.Z2r4WIDrGJD3vJJsuUUYVUmadX9J8Drb9KbMMQpRbqU")
     xhr.send();
   }); 
-
-
