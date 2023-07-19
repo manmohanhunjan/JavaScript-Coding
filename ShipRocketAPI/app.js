@@ -478,3 +478,27 @@ getAllOrderDetailsBtn.addEventListener("click", (e) => {
     .then((result) => console.log(result))
     .catch((error) => console.log("error", error));
 });
+
+
+// tracking through AWB
+const trackingBtn = document.querySelector("#getTrackingBtn");
+trackingBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    var awb = document.querySelector("#awb_no").value;
+
+    var myHeaders = new Headers();
+myHeaders.append("Content-Type", "application/json");
+myHeaders.append("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FwaXYyLnNoaXByb2NrZXQuaW4vdjEvZXh0ZXJuYWwvYXV0aC9sb2dpbiIsImlhdCI6MTY4OTc0Nzg3NiwiZXhwIjoxNjkwNjExODc2LCJuYmYiOjE2ODk3NDc4NzYsImp0aSI6InkxUWxwb2ZvMTBwNUdCWWwiLCJzdWIiOjM2NjI1NDcsInBydiI6IjA1YmI2NjBmNjdjYWM3NDVmN2IzZGExZWVmMTk3MTk1YTIxMWU2ZDkifQ.FCnhW4r16896wUmoh8aBtlPvOchfkSgAKkstS8Prww0");
+
+var requestOptions = {
+  method: 'GET',
+  headers: myHeaders,
+  redirect: 'follow'
+};
+
+fetch(`https://apiv2.shiprocket.in/v1/external/courier/track/awb/${awb}`, requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+
+})
