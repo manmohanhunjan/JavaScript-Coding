@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Place order on ShipRocket</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <!-- jQuery cdn -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- <script src="app.js" defer></script> -->
+    <!-- <script src="auth.js" defer></script> -->
+
+
+</head>
+
+<body>
+    <header>
+        <!-- place navbar here -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">ShipRocketAPI</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
+
+    </header>
+    <main>
+        <div class="container">
+            <h1>Shiprocket Order Form</h1>
+            <form action="/shiprocket/order" method="post">
+                <div class="mb-3">
+                    <label for="order_id">Order ID</label>
+                    <input type="text" name="order_id" class="form-control" id="order_id" placeholder="Order ID">
+                </div>
+                <div class="mb-3">
+                    <label for="shipping_service">Shipping Service</label>
+                    <select name="shipping_service" class="form-control" id="shipping_service">
+                        <option value="bluedart">BlueDart</option>
+                        <option value="dhl">DHL</option>
+                        <option value="fedex">FedEx</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="shipping_address_name">Shipping Address Name</label>
+                    <input type="text" name="shipping_address_name" class="form-control" id="shipping_address_name"
+                        placeholder="Shipping Address Name">
+                </div>
+                <div class="mb-3">
+                    <label for="shipping_address_email">Shipping Address Email</label>
+                    <input type="email" name="shipping_address_email" class="form-control" id="shipping_address_email"
+                        placeholder="Shipping Address Email">
+                </div>
+                <div class="mb-3">
+                    <label for="shipping_address_phone">Shipping Address Phone</label>
+                    <input type="tel" name="shipping_address_phone" class="form-control" id="shipping_address_phone"
+                        placeholder="Shipping Address Phone">
+                </div>
+                <div class="mb-3">
+                    <label for="shipping_address_address1">Shipping Address Address 1</label>
+                    <input type="text" name="shipping_address_address1" class="form-control"
+                        id="shipping_address_address1" placeholder="Shipping Address Address 1">
+                </div>
+                <div class="mb-3">
+                    <label for="shipping_address_address2">Shipping Address Address 2</label>
+                    <input type="text" name="shipping_address_address2" class="form-control"
+                        id="shipping_address_address2" placeholder="Shipping Address Address 2">
+                </div>
+                <div class="mb-3">
+                    <label for="shipping_address_city">Shipping Address City</label>
+                    <input type="text" name="shipping_address_city" class="form-control" id="shipping_address_city"
+                        placeholder="Shipping Address City">
+                </div>
+                <div class="mb-3">
+                    <label for="shipping_address_state">Shipping Address State</label>
+                    <input type="text" name="shipping_address_state" class="form-control" id="shipping_address_state"
+                        placeholder="Shipping Address State">
+                </div>
+                <div class="mb-3">
+                    <label for="shipping_address_country">Shipping Address Country</label>
+                    <input type="text" name="shipping_address_country" class="form-control"
+                        id="shipping_address_country" placeholder="Shipping Address Country">
+                </div>
+                <div class="mb-3">
+                    <label for="shipping_address_pincode">Shipping Address Pincode</label>
+                    <input type="text" name="shipping_address_pincode" class="form-control"
+                        id="shipping_address_pincode" placeholder="Shipping Address Pincode">
+                </div>
+                <div class="mb-3">
+                    <label for="shipping_details_weight">Shipping Details Weight</label>
+                    <input type="text" name="shipping_details_weight" class="form-control" id="shipping_details_weight"
+                        placeholder="Shipping Details Weight">
+                </div>
+                <div class="mb-3">
+                    <label for="shipping_details_volumetric_weight">Shipping Details Volumetric Weight</label>
+                    <input type="text" name="shipping_details_volumetric_weight" class="form-control"
+                        id="shipping_details_volumetric_weight" placeholder="Shipping Details Volumetric Weight">
+                </div>
+                <div class="mb-3">
+                    <label for="shipping_details_insurance_amount">Shipping Details Insurance Amount</label>
+                    <input type="text" name="shipping_details_insurance_amount" class="form-control"
+                        id="shipping_details_insurance_amount" placeholder="Shipping Details Insurance Amount">
+                </div>
+                <!-- items_produce_id -->
+                <div class="mb-3">
+                    <label for="items_produce_id">Items Produce ID</label>
+                    <input type="text" name="items_produce_id" class="form-control" id="items_produce_id"
+                        placeholder="Items Produce ID">
+                </div>
+                <!-- items_quantity -->
+                <div class="mb-3">
+                    <label for="items_quantity">Items Quantity</label>
+                    <input type="text" name="items_quantity" class="form-control" id="items_quantity"
+                        placeholder="Items Quantity">
+                </div>
+                <!-- items_selling_price -->
+                <div class="mb-3">
+                    <label for="items_selling_price">Items Selling Price</label>
+                    <input type="text" name="items_selling_price" class="form-control" id="items_selling_price"
+                        placeholder="Items Selling Price">
+                </div>
+
+                <div class="mb-3">
+                    <button id="submitBtn" type="submit" class="btn btn-primary">Submit</button>
+                </div>
+
+
+    </main>
+    <footer>
+        <!-- place footer here -->
+    </footer>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+        </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+        </script>
+
+    <script>
+        $(() => {
+            $('#submitBtn').on('click', (e) => {
+                e.preventDefault();
+                // alert('Order Placed')
+                var order_id = $("#order_id").val();
+                var shipping_service = $("#shipping_service").val();
+                var shipping_address_name = $("#shipping_address_name").val();
+                var shipping_address_email = $("#shipping_address_email").val();
+                var shipping_address_phone = $("#shipping_address_phone").val();
+                var shipping_address_address1 = $("#shipping_address_address1").val();
+                var shipping_address_address2 = $("#shipping_address_address2").val();
+                var shipping_address_city = $("#shipping_address_city").val();
+                var shipping_address_state = $("#shipping_address_state").val();
+                var shipping_address_country = $("#shipping_address_country").val();
+                var shipping_address_pincode = $("#shipping_address_pincode").val();
+                var shipping_details_weight = $("#shipping_details_weight").val();
+                var shipping_details_volumetric_weight = $("#shipping_details_volumetric_weight").val();
+                var shipping_details_insurance_amount = $("#shipping_details_insurance_amount").val();
+                var items = [];
+                var item = {};
+                item["product_id"] = $("#items_product_id").val();
+                item["quantity"] = $("#items_quantity").val();
+                item["selling_price"] = $("#items_selling_price").val();
+                items.push(item);
+
+                $.ajax({
+                    url: "https://apiv2.shiprocket.in/v1/external/orders/create/adhoc",
+                    method: "POST",
+                    data: {
+                        "order_id": "1234567890",
+                        "shipping_service": "bluedart",
+                        "shipping_address": {
+                            "name": "John Doe",
+                            "email": "john.doe@example.com",
+                            "phone": "9876543210",
+                            "address1": "Primary",
+                            "address2": "",
+                            "city": "San Francisco",
+                            "state": "CA",
+                            "country": "US",
+                            "pincode": "123456"
+                        },
+                        "shipping_details": {
+                            "weight": 1.0,
+                            "volumetric_weight": 1.0,
+                            "insurance_amount": 1000
+                        },
+                        "items": [
+                            {
+                                "product_id": 1234567890,
+                                "quantity": 1,
+                                "selling_price": 1000
+                            }
+                        ]
+                    },
+                    beforeSend: function (xhr) {
+                        xhr.setRequestHeader("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FwaXYyLnNoaXByb2NrZXQuaW4vdjEvZXh0ZXJuYWwvYXV0aC9sb2dpbiIsImlhdCI6MTY4OTc0Nzg3NiwiZXhwIjoxNjkwNjExODc2LCJuYmYiOjE2ODk3NDc4NzYsImp0aSI6InkxUWxwb2ZvMTBwNUdCWWwiLCJzdWIiOjM2NjI1NDcsInBydiI6IjA1YmI2NjBmNjdjYWM3NDVmN2IzZGExZWVmMTk3MTk1YTIxMWU2ZDkifQ.FCnhW4r16896wUmoh8aBtlPvOchfkSgAKkstS8Prww0");
+                    },
+                    success: function (response) {
+                        console.log(response);
+                    },
+                    error: function (error) {
+                        console.log(error);
+                    }
+                });
+
+
+
+            });
+        })
+    </script>
+</body>
+
+</html>
