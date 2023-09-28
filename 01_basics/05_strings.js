@@ -33,3 +33,16 @@ const url = "https://www.google.com/manmohan%20coder";
 console.log(url.replace('%20', '-'));
 console.log(url.includes("manmohan"));
 console.log(gameName.split('n'));
+
+//! Really Cool indexOf() Example
+
+const str = "To be, or not to be, that is the question."; 
+let count = 0;  // variable to store the count
+let position = str.indexOf("e"); // first occurrence
+
+while (position !== -1) {   // while position is not equal to -1 meaning when position == -1 it becomes true and !== makes it false
+    count++;              // increment count
+    position = str.indexOf("e", position + 1);  // look for next occurrence
+}
+
+console.log(count);
