@@ -13,7 +13,7 @@ console.log(balance.toFixed(1));
 
 const otherNumber = 123.43243
 
-console.log(otherNumber.toPrecision(3));
+console.log(otherNumber.toPrecision(3));  // 123
 
 const hundreds = 1000000
 console.log(hundreds.toLocaleString('en-IN'));
