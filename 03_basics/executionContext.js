@@ -26,10 +26,6 @@ let result2 = addNum(10, 2);
 
 //! Whenever we will call addNum function these two steps will execute
 
-
-
-
-
 // 2. Functional Execution Context
-// 3. Block Execution Context
-// 4. Eval Execution Context
+
+// 3. Eval Execution Context
