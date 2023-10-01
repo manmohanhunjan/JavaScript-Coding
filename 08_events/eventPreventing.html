@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Default Prevention</title>
+</head>
+<body>
+    <a href="https://www.example.com" id="myLink">Visit Example.com</a>
+    <p id="resultDisplay">Result will appear here</p>
+
+    <script>
+        const link = document.getElementById('myLink');
+        const resultDisplay = document.getElementById('resultDisplay');
+
+        link.addEventListener('click', (event) => {
+            // Prevent the default action of the link
+            event.preventDefault();
+
+            // Check if the default action is prevented
+            if (event.defaultPrevented) {
+                resultDisplay.textContent = 'Default action is prevented!';
+            } else {
+                resultDisplay.textContent = 'Default action is not prevented.';
+            }
+        });
+    </script>
+</body>
+</html>
